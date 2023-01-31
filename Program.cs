@@ -79,7 +79,7 @@
     System.Console.WriteLine($"max({a}, {b}, {c}, {d})={max}");*/
 
     //Bài 6. Nhập vào 3 số a, b, c. Kiểm tra xem có phải là ba cạnh của tam giác
-    float a, b, c;
+    /*float a, b, c;
     Console.WriteLine("Nhập hai số a, b, c: ");
     string s_a = Console.ReadLine();//"123"=>123
     string s_b = Console.ReadLine();
@@ -93,9 +93,22 @@
     bool dk3 = (c+a>b);
     bool dk = dk0&&dk1&&dk2&&dk3;
     string kq = (dk==true)?($"{a}, {b}, {c} là ba cạnh của tam giác"):"Không phải";
-    System.Console.WriteLine(kq);
+    System.Console.WriteLine(kq);*/
 
     //Bài 7. Nhập vào 3 số a, b, c => Kiểm tra bộ ba Pythagore
+    float a, b, c;
+    Console.WriteLine("Nhập hai số a, b, c: ");
+    string s_a = Console.ReadLine();//"123"=>123
+    string s_b = Console.ReadLine();
+    string s_c = Console.ReadLine();
+    a = float.Parse(s_a);
+    b = float.Parse(s_b);
+    c = float.Parse(s_c);
+    bool dk1 = a*a==b*b+c*c;//((int)Math.Round(a*a*100000) == (int)Math.Round(b*b*100000) + (int)Math.Round(c*c*100000));
+    bool dk2 = b*b==c*c+a*a;//((int)Math.Round(b*b*100000) == (int)Math.Round(a*a*100000) + (int)Math.Round(c*c*100000));
+    bool dk3 = c*c==a*a+b*b;//((int)Math.Round(c*c*100000) == (int)Math.Round(b*b*100000) + (int)Math.Round(a*a*100000));
+    string kq = (dk1||dk2||dk3==true)?($"{a}, {b}, {c} là bộ ba Pythagore"):("Không phải");
+    System.Console.WriteLine(kq);
 
     Console.ReadKey();
   }
