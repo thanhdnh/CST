@@ -1,0 +1,15 @@
+/Users/hoangthanh/Documents/CST/bin/Debug/net7.0/CST
+/Users/hoangthanh/Documents/CST/bin/Debug/net7.0/CST.deps.json
+/Users/hoangthanh/Documents/CST/bin/Debug/net7.0/CST.runtimeconfig.json
+/Users/hoangthanh/Documents/CST/bin/Debug/net7.0/CST.dll
+/Users/hoangthanh/Documents/CST/bin/Debug/net7.0/CST.pdb
+/Users/hoangthanh/Documents/CST/obj/Debug/net7.0/CST.csproj.AssemblyReference.cache
+/Users/hoangthanh/Documents/CST/obj/Debug/net7.0/CST.GeneratedMSBuildEditorConfig.editorconfig
+/Users/hoangthanh/Documents/CST/obj/Debug/net7.0/CST.AssemblyInfoInputs.cache
+/Users/hoangthanh/Documents/CST/obj/Debug/net7.0/CST.AssemblyInfo.cs
+/Users/hoangthanh/Documents/CST/obj/Debug/net7.0/CST.csproj.CoreCompileInputs.cache
+/Users/hoangthanh/Documents/CST/obj/Debug/net7.0/CST.dll
+/Users/hoangthanh/Documents/CST/obj/Debug/net7.0/refint/CST.dll
+/Users/hoangthanh/Documents/CST/obj/Debug/net7.0/CST.pdb
+/Users/hoangthanh/Documents/CST/obj/Debug/net7.0/CST.genruntimeconfig.cache
+/Users/hoangthanh/Documents/CST/obj/Debug/net7.0/ref/CST.dll
