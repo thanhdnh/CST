@@ -63,7 +63,7 @@
     System.Console.WriteLine($"max({a}, {b}, {c})={max}");*/
 
     //Bài 5. Tìm số lớn nhất trong 4 số a, b, c, d
-    float a, b, c, d;
+    /*float a, b, c, d;
     Console.WriteLine("Nhập hai số a, b, c, d: ");
     string s_a = Console.ReadLine();//"123"=>123
     string s_b = Console.ReadLine();
@@ -76,7 +76,24 @@
     float max1 = (a>=b)?a:b;
     float max2 = (c>=d)?c:d;
     float max = (max1>=max2)?max1:max2;
-    System.Console.WriteLine($"max({a}, {b}, {c}, {d})={max}");
+    System.Console.WriteLine($"max({a}, {b}, {c}, {d})={max}");*/
+
+    //Bài 6. Nhập vào 3 số a, b, c. Kiểm tra xem có phải là ba cạnh của tam giác
+    float a, b, c;
+    Console.WriteLine("Nhập hai số a, b, c: ");
+    string s_a = Console.ReadLine();//"123"=>123
+    string s_b = Console.ReadLine();
+    string s_c = Console.ReadLine();
+    a = float.Parse(s_a);
+    b = float.Parse(s_b);
+    c = float.Parse(s_c);
+    bool dk0 = (a>0)&&(b>0)&&(c>0);
+    bool dk1 = (a+b>c);
+    bool dk2 = (b+c>a);
+    bool dk3 = (c+a>b);
+    bool dk = dk0&&dk1&&dk2&&dk3;
+    string kq = (dk==true)?($"{a}, {b}, {c} là ba cạnh của tam giác"):"Không phải";
+    System.Console.WriteLine(kq);
 
     Console.ReadKey();
   }
