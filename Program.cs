@@ -3,6 +3,8 @@
   static void Main(string[] args)
   {
     Console.Clear();
+    Console.InputEncoding = System.Text.Encoding.UTF8;
+    Console.OutputEncoding = System.Text.Encoding.UTF8;
 
     //Bài 1. Nhập vào hai số a, b => Tính tổng, hiệu, tích và thương của a và b
     /*float a;
