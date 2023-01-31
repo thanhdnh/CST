@@ -1,114 +1,94 @@
 ﻿class Program
 {
+  /*static double Max(double x, double y, double z = 0){
+    return (x>y)?(x>z?x:z):(y>z?y:z);
+  }
+  static double MaxAll(**arg){
+    
+  }
+  static double Sum(double x, double y){
+    return x+y;
+  }
+  static double Sum(double[] arr){
+    double sum = 0;
+    foreach(double x in arr)
+      sum += x;
+    //for(int i=0; i<arr.Length; i++)
+      //sum += arr[i];
+    return sum;
+  }
+  static string Sum(string x, string y){
+    return x+y;
+  }*/
+  static int[,] img = {
+                       {2,  3,  0, 1, 4},
+                       {2,  2,  1, 0, 4},
+                       {2,  2,  3, 9, 14},
+                       {21, 16, 8, 0, 1}
+                      };
+  static void printmatrix(int[,] input){
+    for(int i=0; i<input.GetLength(0);i++){
+      for(int j=0; j<input.GetLength(1); j++)
+        Console.Write("{0, 3}", input[i, j]);
+      Console.WriteLine();
+    }
+  }
+  static int[,] padding(int[,] input)
+  {
+    int[,] maxtrix = new int[input.GetLength(0)+2, input.GetLength(1)+2];
+    for (int i = 1; i < maxtrix.GetLength(0) - 1; i++)
+      for (int j = 1; j < maxtrix.GetLength(1) - 1; j++)
+        maxtrix[i, j] = input[i - 1, j - 1];
+    for (int i = 0; i < maxtrix.GetLength(1); i++)
+    {
+      maxtrix[0, i] = maxtrix[1, i];
+      maxtrix[maxtrix.GetLength(0)-1, i] = maxtrix[maxtrix.GetLength(0) - 2, i];
+    }
+    for (int j = 0; j < maxtrix.GetLength(0); j++)
+    {
+      maxtrix[j, 0] = maxtrix[j, 1];
+      maxtrix[j, maxtrix.GetLength(1)-1] = maxtrix[j, maxtrix.GetLength(1) - 2];
+    }
+    return maxtrix;
+  }
+
+  static List localwindow(int i, int j)
+  {
+    List temp = new List();
+    for(int m=i-1; m<=i+1; m++)
+      for(int n=j-1; n<=j+1; n++)
+        if(m!=i && n!=j)
+          temp.Add(img[m, n]);
+    return temp;
+  }
+  static int meanfilter(int[,] input)
+  {
+    int[,] newmatrix = padding(input);
+    for(int i=1; i<newmatrix.GetLength(0)-1; i++)
+      for(int j=1; j<newmatrix.GetLength(1)-1; j++)
+        if(newmatrix[i,j]==0){
+          List l = localwindow(i, j);
+          newmatrix[i,j] = mean(l);
+        }
+    return 0;
+  }
+  static int mean(List l){
+    int sum = 0;
+    foreach(int i in l)
+      sum += i;
+    return sum/l.Count;
+  }
   static void Main(string[] args)
   {
-    Console.Clear();
+    Console.WriteLine(img[0, 0]);
+    /*Console.WriteLine("Nhap x, y:");
+    double x = 3, y = 5, z = 1;
+    Console.WriteLine(Max(x, y, z));
+    Console.WriteLine(Max(x, y));*/
 
-    //Bài 1. Nhập vào hai số a, b => Tính tổng, hiệu, tích và thương của a và b
-    /*float a;
-    float b;
-    Console.WriteLine("Nhập hai số a, b: ");
-    string s_a = Console.ReadLine();//"123"=>123
-    string s_b = Console.ReadLine();
-    a = float.Parse(s_a);
-    b = float.Parse(s_b);
-
-    float tong = a + b;
-    float hieu = a - b;
-    float tich = a * b;
-    float thuong = a / b;
-
-    Console.WriteLine("{0}+{1}={2}", a, b, tong);
-    Console.WriteLine($"{a}-{b}={hieu}");
-    Console.WriteLine(a + "*" + b + "=" + tich);
-    Console.WriteLine("{0}/{1}={2}", a, b, thuong);*/
-
-    //Bài 2. |a-b|, a, b là hai số thực cho trước
-    /*float a;
-    float b;
-    Console.WriteLine("Nhập hai số a, b: ");
-    string s_a = Console.ReadLine();//"123"=>123
-    string s_b = Console.ReadLine();
-    a = float.Parse(s_a);
-    b = float.Parse(s_b);
-
-    float gttd;
-    gttd = (a>=b)?(a-b):(b-a);
-    System.Console.WriteLine($"|{a}-{b}|={gttd}");*/
-
-    //Bài 3. Tìm số lớn nhất trong 2 số a, b
-    /*float a;
-    float b;
-    Console.WriteLine("Nhập hai số a, b: ");
-    string s_a = Console.ReadLine();//"123"=>123
-    string s_b = Console.ReadLine();
-    a = float.Parse(s_a);
-    b = float.Parse(s_b);
-    float max;
-    max = (a>b)?a:b;
-    System.Console.WriteLine($"max({a}, {b})={max}");*/
-
-    //Bài 4. Tìm số lớn nhất trong 3 số a, b, c
-    /*float a, b, c;
-    Console.WriteLine("Nhập hai số a, b, c: ");
-    string s_a = Console.ReadLine();//"123"=>123
-    string s_b = Console.ReadLine();
-    string s_c = Console.ReadLine();
-    a = float.Parse(s_a);
-    b = float.Parse(s_b);
-    c = float.Parse(s_c);
-    float max = (a>=b)?a:b;
-    max = (max>=c)?max:c;
-    //max = (a>=b)?((a>c)?a:c):((b>=c)?b:c);
-    System.Console.WriteLine($"max({a}, {b}, {c})={max}");*/
-
-    //Bài 5. Tìm số lớn nhất trong 4 số a, b, c, d
-    /*float a, b, c, d;
-    Console.WriteLine("Nhập hai số a, b, c, d: ");
-    string s_a = Console.ReadLine();//"123"=>123
-    string s_b = Console.ReadLine();
-    string s_c = Console.ReadLine();
-    string s_d = Console.ReadLine();
-    a = float.Parse(s_a);
-    b = float.Parse(s_b);
-    c = float.Parse(s_c);
-    d = float.Parse(s_d);
-    float max1 = (a>=b)?a:b;
-    float max2 = (c>=d)?c:d;
-    float max = (max1>=max2)?max1:max2;
-    System.Console.WriteLine($"max({a}, {b}, {c}, {d})={max}");*/
-
-    //Bài 6. Nhập vào 3 số a, b, c. Kiểm tra xem có phải là ba cạnh của tam giác
-    /*float a, b, c;
-    Console.WriteLine("Nhập hai số a, b, c: ");
-    string s_a = Console.ReadLine();//"123"=>123
-    string s_b = Console.ReadLine();
-    string s_c = Console.ReadLine();
-    a = float.Parse(s_a);
-    b = float.Parse(s_b);
-    c = float.Parse(s_c);
-    bool dk0 = (a>0)&&(b>0)&&(c>0);
-    bool dk1 = (a+b>c);
-    bool dk2 = (b+c>a);
-    bool dk3 = (c+a>b);
-    bool dk = dk0&&dk1&&dk2&&dk3;
-    string kq = (dk==true)?($"{a}, {b}, {c} là ba cạnh của tam giác"):"Không phải";
-    System.Console.WriteLine(kq);*/
-
-    //Bài 7. Nhập vào 3 số a, b, c => Kiểm tra bộ ba Pythagore
-    float a, b, c;
-    Console.WriteLine("Nhập hai số a, b, c: ");
-    string s_a = Console.ReadLine();//"123"=>123
-    string s_b = Console.ReadLine();
-    string s_c = Console.ReadLine();
-    a = float.Parse(s_a);
-    b = float.Parse(s_b);
-    c = float.Parse(s_c);
-    bool dk1 = a*a==b*b+c*c;//((int)Math.Round(a*a*100000) == (int)Math.Round(b*b*100000) + (int)Math.Round(c*c*100000));
-    bool dk2 = b*b==c*c+a*a;//((int)Math.Round(b*b*100000) == (int)Math.Round(a*a*100000) + (int)Math.Round(c*c*100000));
-    bool dk3 = c*c==a*a+b*b;//((int)Math.Round(c*c*100000) == (int)Math.Round(b*b*100000) + (int)Math.Round(a*a*100000));
-    string kq = (dk1||dk2||dk3==true)?($"{a}, {b}, {c} là bộ ba Pythagore"):("Không phải");
-    System.Console.WriteLine(kq);
+    printmatrix(img);
+    Console.WriteLine("\n----\n");
+    printmatrix(padding(img));
 
     Console.ReadKey();
   }
