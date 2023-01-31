@@ -4,10 +4,9 @@
   {
     Console.Clear();
 
-    //Nhập vào hai số a, b => Tính tổng, hiệu, tích và thương của a và b
-    float a;
+    //Bài 1. Nhập vào hai số a, b => Tính tổng, hiệu, tích và thương của a và b
+    /*float a;
     float b;
-    //float a, b;
     Console.WriteLine("Nhập hai số a, b: ");
     string s_a = Console.ReadLine();//"123"=>123
     string s_b = Console.ReadLine();
@@ -22,7 +21,20 @@
     Console.WriteLine("{0}+{1}={2}", a, b, tong);
     Console.WriteLine($"{a}-{b}={hieu}");
     Console.WriteLine(a + "*" + b + "=" + tich);
-    Console.WriteLine("{0}/{1}={2}", a, b, thuong);
+    Console.WriteLine("{0}/{1}={2}", a, b, thuong);*/
+
+    //Bài 2. |a-b|, a, b là hai số thực cho trước
+    float a;
+    float b;
+    Console.WriteLine("Nhập hai số a, b: ");
+    string s_a = Console.ReadLine();//"123"=>123
+    string s_b = Console.ReadLine();
+    a = float.Parse(s_a);
+    b = float.Parse(s_b);
+
+    float gttd;
+    gttd = (a>=b)?(a-b):(b-a);
+    System.Console.WriteLine($"|{a}-{b}|={gttd}");
 
     Console.ReadKey();
   }
