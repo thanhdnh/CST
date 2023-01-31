@@ -95,6 +95,8 @@
     string kq = (dk==true)?($"{a}, {b}, {c} là ba cạnh của tam giác"):"Không phải";
     System.Console.WriteLine(kq);
 
+    //Bài 7. Nhập vào 3 số a, b, c => Kiểm tra bộ ba Pythagore
+
     Console.ReadKey();
   }
 }
